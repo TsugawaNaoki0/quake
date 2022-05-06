@@ -58,14 +58,14 @@ else:
     ddd = aaa.y_news(url)
     # print(ddd)
     # print(type(ddd))
-    print(ddd[0])
-    print(type(ddd[0]))
+    # print(ddd[0])
+    # print(type(ddd[0]))
 
     message = ddd[0]
 
 
     res_list = re.findall(r'\d+', message)
-    print(res_list)
+    # print(res_list)
     res_date_before = res_list[0]
 
     res_date = res_date_before[:4] + "年" + res_date_before[4:]
@@ -74,7 +74,7 @@ else:
     res_date = res_date[:13] + "時" + res_date[13:]
     res_date = res_date[:16] + "分" + res_date[16:]
     res_date = res_date[:19] + "秒" + res_date[19:]
-    print(res_date)
+    # print(res_date)
     # res[7] = "年"
     # res[10] = "年"
     # massage = res
