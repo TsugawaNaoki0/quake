@@ -6,7 +6,37 @@ import csv
 import requests
 import feedparser
 import os
+from email.mime.text import MIMEText
+import smtplib
 
+
+
+class quake_mail_class():
+    def quake_mail(self, quake_news):
+
+        # SMTP認証情報
+        account = "subaodezhen641@gmail.com"
+        password = "19960701jishin"
+
+        # 送受信先
+        to_email = "jinchuanzhishu76@gmail.com"
+        from_email = "subaodezhen641@gmail.com"
+
+        # MIMEの作成
+        subject = "地震速報"
+        # message = "地震速報"
+        message = quake_news
+        msg = MIMEText(message, "html")
+        msg["Subject"] = subject
+        msg["To"] = to_email
+        msg["From"] = from_email
+
+        # メール送信処理
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.starttls()
+        server.login(account, password)
+        server.send_message(msg)
+        server.quit()
 
 
 class y_news_class():
@@ -82,8 +112,10 @@ else:
 
 
 
-    time = datetime.datetime.now()   # 日付を取得する
-    time = time.strftime('%Y年%m月%d日 %H:%M:%S')   # 見やすく変換する
+    # time = datetime.datetime.now()   # 日付を取得する
+    # time = time.strftime('%Y年%m月%d日 %H:%M:%S')   # 見やすく変換する
+
+    # 以下、LINEのメッセージ送信プログラム
 
     TOKEN = 'ubh9DRuV9zdbxHuY7bRdyigA1nSVTaMj1O8E2oE9QJt'
     api_url = 'https://notify-api.line.me/api/notify'
@@ -101,6 +133,13 @@ else:
     requests.post(api_url, headers=TOKEN_dic, data=send_dic)
 
 
+    quake_news = send_contents
+    aaa= quake_mail_class()
+    bbb = aaa.quake_mail(quake_news)
+
 f.close()
+
+
+
 
  # while true; do python3 quake.py; sleep 20s; done
