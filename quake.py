@@ -16,8 +16,9 @@ class quake_mail_class():
 
         # SMTP認証情報
         account = "subaodezhen641@gmail.com"
-        password = "19960701jishin"
-
+        # password = "19960701jishin"
+        password = "ubqrmyfjgxsojiwg"
+        
         # 送受信先
         to_email = "jinchuanzhishu76@gmail.com"
         from_email = "subaodezhen641@gmail.com"
