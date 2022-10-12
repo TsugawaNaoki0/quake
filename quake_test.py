@@ -1,3 +1,5 @@
+# message = "〇〇〇〇年〇〇月〇〇日〇〇時〇〇分〇〇秒　〇〇地域　M〇〇　深さ〇〇km　最大震度〇〇"
+
 import requests
 import re
 import datetime
@@ -65,7 +67,7 @@ bbb = str(bbb)
 data_now = bbb
 
 
-path = './data/quake_data.txt'
+path = './data/quake_data_test.txt'
 # path = '/home/natsukiogawa/sample/quake_data.txt'
 
 
@@ -76,7 +78,8 @@ data_before = f.read()
 # if (data_before == data_now):
 #     print("no change")
 # else:
-print("There are some changes")
+# print("There are some changes")
+print("地震が発生しました[これはテストです]")
 
 # path = './data/quake_data.txt'
 # path = './data/quake_data.txt'
@@ -109,9 +112,8 @@ res_date = res_date[:19] + "秒" + res_date[19:]
 # res[7] = "年"
 # res[10] = "年"
 # massage = res
-# message = message.replace(res_date_before, res_date)
+message = message.replace(res_date_before, res_date)
 message = "〇〇〇〇年〇〇月〇〇日〇〇時〇〇分〇〇秒　〇〇地域　M〇〇　深さ〇〇km　最大震度〇〇"
-
 
 # time = datetime.datetime.now()   # 日付を取得する
 # time = time.strftime('%Y年%m月%d日 %H:%M:%S')   # 見やすく変換する
@@ -123,7 +125,7 @@ api_url = 'https://notify-api.line.me/api/notify'
 #時刻を送る内容の変数に設定
 # send_contents = time
 # send_contents = "プログラムが起動されました。"
-send_contents = "「これはテストです」" + "地震が起きました : " + message + " "
+send_contents = "地震が起きました : " + message + " "
 TOKEN_dic = {'Authorization': 'Bearer' + ' ' + TOKEN}
 send_dic = {'message': send_contents}
 

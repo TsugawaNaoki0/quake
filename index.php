@@ -13,19 +13,12 @@
             <h1>地震速報</h1>
             <br>
             <br>
-            <form action="./qua_transfer.php" method="post">
+            <form action="./qua_transfer_test.php" method="post">
               <!-- <input type="textarea" name="confirm" value=""> -->
-              <label for="confirm0"><h3>地震の有無</h3></label><br>
-             　　地震あり：「There are some changes」<br>
-             　　地震なし：「no change」<br>
+              <label for="confirm0"><h3>地震発生テストボタン（仮）</h3></label><br>
               <input type="submit" value="-----" class="form">
             </form>
             <br>
-            <form action="./qua_transfer.php" method="post">
-              <!-- <input type="textarea" name="confirm" value=""> -->
-              <label for="confirm0"><h3>地震発生ボタン（仮）</h3></label><br>
-              <input type="submit" value="-----" class="form">
-            </form>
             <br>
             <br>
     </div>
