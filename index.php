@@ -10,17 +10,14 @@
  <body>
     <div class="main">
             <br>
-            <h1>リボ払い</h1>
+            <h1>地震速報</h1>
             <br>
-            ※ 1ヶ月を30日(1年を360日)として計算しています
             <br>
             <form action="./qua_transfer.php" method="post">
               <!-- <input type="textarea" name="confirm" value=""> -->
-              <label for="confirm0"><h3>年利率</h3></label><br>
-              <select name="confirm0" class="form">
-                  <!-- <option value="blue">青</option> -->
-                  <option value="0.10">10%</option>
-              </select>
+              <label for="confirm0"><h3>地震の有無</h3></label><br>
+             　　地震あり：「There are some changes」
+             　　地震なし：「no change」
               <input type="submit" value="-----" class="form">
             </form>
             <br>
