@@ -2,20 +2,40 @@
 <html lang="ja">
  <head>
    <meta charset="utf-8">
-   <link rel="stylesheet" href="./../../home.css">
+   <link rel="stylesheet" href="./home.css">
    <title>HallowinGhost</title>
     <link rel="icon" href="ghost.png"><!-- タイトルにアイコンを設定 -->
     <link rel="apple-touch-icon" href="icon.png"><!-- iphone のアイコンを設定 -->
  </head>
  <body>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
     <div class="main">
             <br>
-            <h1>地震速報</h1>
+            <p class="title">
+             地震速報
+            </p>
             <br>
             <br>
             <form action="./qua_transfer_test.php" method="post">
               <!-- <input type="textarea" name="confirm" value=""> -->
-              <label for="confirm0"><h3>地震発生テストボタン（仮）</h3></label><br>
+              <label for="confirm0" class="label">地震発生テストボタン（仮）</label>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
               <input type="submit" value="-----" class="form">
             </form>
             <br>
