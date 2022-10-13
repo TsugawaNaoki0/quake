@@ -8,19 +8,6 @@
     <link rel="apple-touch-icon" href="icon.png"><!-- iphone のアイコンを設定 -->
  </head>
  <body>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
     <div class="main">
             <br>
             <p class="title">

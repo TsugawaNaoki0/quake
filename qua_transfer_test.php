@@ -1,9 +1,40 @@
-<?php
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="./home.css">
+   <title>HallowinGhost</title>
+    <link rel="icon" href="ghost.png"><!-- タイトルにアイコンを設定 -->
+    <link rel="apple-touch-icon" href="icon.png"><!-- iphone のアイコンを設定 -->
+ </head>
+ <body>
+    <div class="main">
+      <link rel="stylesheet" href="./home.css">
+      <div class="main">
+        <div class="label">
+          地震が発生しました[これはテストです]
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      <?php
 
 
-  // echo shell_exec("export LANG=ja_JP.UTF-8; python3 revolving.py ".$_POST["confirm0"]." ".$_POST["confirm1"]." ".$_POST["confirm2"]);
-  // echo shell_exec("export LANG=ja_JP.UTF-8; python3 graph_maker.py ".$_POST["confirm1"]." ".$_POST["confirm2"]);
+        $time_from_python = shell_exec("export LANG=ja_JP.UTF-8; python3 times.py");
+        // echo shell_exec("export LANG=ja_JP.UTF-8; python3 times.py");
+        echo shell_exec("export LANG=ja_JP.UTF-8; python3 quake_test.py ");
+        // echo $time_from_python;
+       ?>
 
-  echo shell_exec("export LANG=ja_JP.UTF-8; python3 quake_test.py ");
+       <div class="timestamp">
+         <?php echo $time_from_python
+          ?>
+       </div>
+      </div>
 
- ?>
+    </div>
+ </body>
+</html>

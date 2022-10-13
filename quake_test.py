@@ -10,6 +10,9 @@ import feedparser
 import os
 from email.mime.text import MIMEText
 import smtplib
+import datetime
+
+
 
 
 
@@ -75,46 +78,12 @@ f = open(path, 'r', encoding='UTF-8')
 data_before = f.read()
 # print(data_before)
 
-# if (data_before == data_now):
-#     print("no change")
-# else:
-# print("There are some changes")
-print("<link rel=\"stylesheet\" href=\"./home.css\">")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<br>")
-print("<div class=\"main\">")
-print("<div class=\"label\">")
-print("地震が発生しました[これはテストです]")
-print("</div>")
-print("</div>")
-print("<br>")
+\
+t_delta = datetime.timedelta(hours=9)
+JST = datetime.timezone(t_delta, 'JST')
+now = datetime.datetime.now(JST)
+now = str(now)
 
-# path = './data/quake_data.txt'
-# path = './data/quake_data.txt'
 f = open(path, 'w')
 f.write(data_now)  # 何も書き込まなくてファイルは作成されました
 data_now = list(data_now)
@@ -173,8 +142,3 @@ aaa= quake_mail_class()
 bbb = aaa.quake_mail(quake_news)
 
 f.close()
-
-
-
-
- # while true; do python3 quake.py; sleep 20s; done
