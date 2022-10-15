@@ -4,8 +4,8 @@
    <meta charset="utf-8">
    <link rel="stylesheet" href="./home.css">
    <title>HallowinGhost</title>
-    <link rel="icon" href="ghost.png"><!-- タイトルにアイコンを設定 -->
-    <link rel="apple-touch-icon" href="icon.png"><!-- iphone のアイコンを設定 -->
+    <link rel="icon" href="./quake.png"><!-- タイトルにアイコンを設定 -->
+    <link rel="apple-touch-icon" href="./quake.png"><!-- iphone のアイコンを設定 -->
  </head>
  <body>
     <div class="main">
