@@ -1,23 +1,30 @@
 .main{
   text-align: center;
   /* margin-top: 10%; */
-  margin-top: 25%;
+  margin-top: 15%;
+  width: 80%;
+  background-color: green;
+  margin-left: 10%;
 }
 
 
 .title{
   font-size: 80px;
+  color: blue;
 }
 
 .label{
   font-size: 50px;
+  color: blue;
   /* margin-top: 25%; */
 }
 
 .form{
   font-size: 50px;
+  color: blue;
 }
 
 .timestamp{
   font-size: 50px;
+  color: blue;
 }
