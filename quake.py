@@ -10,11 +10,26 @@ import feedparser
 import os
 from email.mime.text import MIMEText
 import smtplib
+import sys
 
+
+
+
+
+class to_mail_class():
+    def to_mail(self):
+        # mail_list = ["jinchuanzhishu76@gmail.com"\
+        #              ,"qq856533@gmail.com"\
+        #              ,"mqiang838@gmail.com"\
+        #              ]
+        ##########################################
+
+
+        return mail_list
 
 
 class quake_mail_class():
-    def quake_mail(self, quake_news):
+    def quake_mail(self, quake_news, to_address_list):
 
         # SMTP認証情報
         account = "subaodezhen641@gmail.com"
@@ -22,7 +37,7 @@ class quake_mail_class():
         password = "ubqrmyfjgxsojiwg"
 
         # 送受信先
-        to_email = "jinchuanzhishu76@gmail.com"
+        to_email = to_address_list
         from_email = "subaodezhen641@gmail.com"
 
         # MIMEの作成
@@ -54,6 +69,20 @@ class y_news_class():
             # print('タイトル:', entry.title)
             # print('URL:', entry.link)
         return data_bank
+
+
+
+
+args = sys.argv
+
+mail_list = []
+
+for i in range(1, len(args)):
+    mail_list.append(args[i])
+    print("<p>" + mail_list[i-1] + "</p>")
+
+
+
 
 url = "https://headline.5ch.net/bbynamazu/news.rss"
 
@@ -136,9 +165,24 @@ else:
     requests.post(api_url, headers=TOKEN_dic, data=send_dic)
 
 
-    quake_news = send_contents
-    aaa= quake_mail_class()
-    bbb = aaa.quake_mail(quake_news)
+
+    qqq = to_mail_class()
+    to_mail_list = qqq.to_mail()
+    print(to_mail_list)
+
+
+
+
+
+    # to_mail_address = to_mail_list[0]
+    to_mail_address = to_mail_list
+
+
+
+    for i in range(len(to_mail_address)):
+        quake_news = send_contents
+        aaa= quake_mail_class()
+        bbb = aaa.quake_mail(quake_news, to_mail_address[i])
 
 f.close()
 
