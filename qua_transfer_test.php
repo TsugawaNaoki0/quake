@@ -42,6 +42,12 @@
        <div class="timestamp">
          <?php echo $time_from_python
           ?>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
        </div>
       </div>
 
