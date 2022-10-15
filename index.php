@@ -10,6 +10,10 @@
  <body>
     <div class="main">
             <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <p class="title">
              地震速報
             </p>

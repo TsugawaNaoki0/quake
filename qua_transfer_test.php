@@ -11,6 +11,16 @@
     <div class="main">
       <link rel="stylesheet" href="./home.css">
       <div class="main">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="label">
           地震が発生しました[これはテストです]
         </div>
