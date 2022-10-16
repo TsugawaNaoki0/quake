@@ -1,7 +1,7 @@
 .main{
   text-align: center;
   /* margin-top: 10%; */
-  margin-top: 15%;
+  margin-top: 10%;
   width: 80%;
   background-color: green;
   margin-left: 10%;
@@ -35,6 +35,36 @@
 }
 
 .login{
+  font-size: 50px;
+  color: blue;
+}
+
+.delete_page{
+  font-size: 50px;
+  color: blue;
+}
+
+.email_tra{
+  font-size: 50px;
+  color: blue;
+}
+
+.del_mail{
+  font-size: 50px;
+  color: blue;
+}
+
+.sakujo{
+  font-size: 50px;
+  color: blue;
+}
+
+.delete_button{
+  font-size: 50px;
+  color: blue;
+}
+
+.reg_del{
   font-size: 50px;
   color: blue;
 }

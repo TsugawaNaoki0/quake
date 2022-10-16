@@ -20,9 +20,10 @@
         <br>
         <br>
         <br>
+        <form action="./del_comp.php" method="post" class="del_email">
         <br>
         <div class="label">
-          地震が発生しました[これはテストです]
+          メール登録解除画面
         </div>
         <br>
         <br>
@@ -31,7 +32,6 @@
         <br>
         <br>
       <?php
-        $time_from_python = shell_exec("export LANG=ja_JP.UTF-8; python3 times.py");
 
         $email = $_POST['email_tra'];
 
@@ -55,22 +55,44 @@
           $hikisu = $hikisu.'"'.$fruit.'"';
           $hikisu = $hikisu." ";
         }
+        // echo $hikisu;
 
-        $sentence = "export LANG=ja_JP.UTF-8; python3 quake_test.py ".$hikisu;
-        echo shell_exec($sentence);
+
+
+
+
+        $del_email = $_POST['del_email'];
+        echo "<br>";
+        echo "<p class=\"sakujo\">以下のメールアドレスの登録を削除しますか？</p>";
+        echo "<br>";
+
+        ?><input type="textbox" class="del_mail" name="del_mail" value="<?php echo $del_email;?>" readonly="readonly">
+
+        <?php
+
+        // echo "<br>";
+        // echo "string";
+        // $sentence = "export LANG=ja_JP.UTF-8; python3 quake_test.py ".$hikisu;
+        // echo shell_exec($sentence);
 
        ?>
+         <br>
+         <br>
+         <input type="submit" value="はい" name="del_comp_btn" class="delete_button">
+         <br>
+         <br>
+       </form>
 
-       <div class="timestamp">
-         <?php echo $time_from_python
-          ?>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-
-       </div>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
       </div>
 
     </div>

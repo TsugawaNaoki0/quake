@@ -17,7 +17,6 @@ define('DSN', 'mysql:host=localhost;dbname=mail_list');
 define('DB_USER', 'root');
 define('DB_PASS', '19960701mysql');
 
-
 //データベースへ接続、テーブルがない場合は作成
 try {
   $pdo = new PDO(DSN, DB_USER, DB_PASS);

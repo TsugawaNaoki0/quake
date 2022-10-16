@@ -27,7 +27,7 @@
             以下のメールアドレスを登録しますか？
           </div>
           <?php
-            $address = $_POST[email];
+            $address = $_POST['email'];
           ?>
           <input type="textbox" class="email_tra" name="email_tra" value="<?php echo $address;?>" readonly="readonly">
 

@@ -11,13 +11,14 @@ import os
 from email.mime.text import MIMEText
 import smtplib
 import datetime
+import sys
 
 
 
 
 
 class quake_mail_class():
-    def quake_mail(self, quake_news):
+    def quake_mail(self, quake_news, to_address):
 
         # SMTP認証情報
         account = "subaodezhen641@gmail.com"
@@ -25,7 +26,7 @@ class quake_mail_class():
         password = "ubqrmyfjgxsojiwg"
 
         # 送受信先
-        to_email = "jinchuanzhishu76@gmail.com"
+        to_email = to_address
         from_email = "subaodezhen641@gmail.com"
 
         # MIMEの作成
@@ -58,6 +59,40 @@ class y_news_class():
             # print('URL:', entry.link)
         return data_bank
 
+
+
+# print("<p>@@ @@ @@ @@ @@</p>")
+args = sys.argv
+# print("!!!!!!!!!!!")
+# print("<p>" + type(args) + "</p>")
+# args = str(args)
+# print("@@@@@@@@@@@")
+# print("<p>" + args[1] + "</p>")
+mail_list = []
+
+# print("<p>" + str(args) + "</p>")
+
+
+for i in range(1, len(args)):
+    mail_list.append(str(args[i]))
+    # print(args[i])
+# print("<p>" + mail_list[i-1] + "@@@</p>")
+# print("<p>" + str(mail_list) + "</p>")
+
+mail_list = list(mail_list)
+
+# print("<p>" + str(mail_list) + "</p>")
+# print("<p>" + "@@@ @@@ @@@ @@@" + "</p>")
+# print("<p>" + str(mail_list) + "</p>")
+# print("<p>" + mail_list[0] + "</p>")
+# print("<p>" + mail_list[1] + "</p>")
+# print("<p>" + mail_list[2] + "</p>")
+# print("<p>" + str(mail_list[0]) + "</p>")
+# print("<p>" + str(list(mail_list)[0]) + "</p>")
+# print("<p>" + str(list(mail_list)[1]) + "</p>")
+# print("<p>" + str(list(mail_list)[2]) + "</p>")
+
+
 url = "https://headline.5ch.net/bbynamazu/news.rss"
 
 aaa = y_news_class()
@@ -78,7 +113,7 @@ f = open(path, 'r', encoding='UTF-8')
 data_before = f.read()
 # print(data_before)
 
-\
+
 t_delta = datetime.timedelta(hours=9)
 JST = datetime.timezone(t_delta, 'JST')
 now = datetime.datetime.now(JST)
@@ -136,9 +171,20 @@ image_dic = {'imageFile': binary}
 
 requests.post(api_url, headers=TOKEN_dic, data=send_dic)
 
+# to_mail_address = to_mail_list[0]
+to_mail_address = mail_list
 
-quake_news = send_contents
-aaa= quake_mail_class()
-bbb = aaa.quake_mail(quake_news)
+
+
+for i in range(len(mail_list)):
+    quake_news = send_contents
+    aaa= quake_mail_class()
+    # bbb = aaa.quake_mail(quake_news, to_mail_address[i])
+    bbb = aaa.quake_mail(quake_news, mail_list[i])
+
+
+# quake_news = send_contents
+# aaa= quake_mail_class()
+# bbb = aaa.quake_mail(quake_news)
 
 f.close()

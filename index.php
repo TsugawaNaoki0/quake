@@ -9,9 +9,6 @@
  </head>
  <body>
     <div class="main">
-            <br>
-            <br>
-            <br>
             <p class="title">
              地震速報
             </p>
@@ -19,6 +16,8 @@
               <!-- <input type="textarea" name="confirm" value=""> -->
               <label for="confirm0" class="label">地震発生テストボタン（仮）</label>
               <br>
+              <br>
+              <h3>ボタンを押すと、登録されているメールアドレスに地震速報メールが送信されます</h3>
               <br>
               <br>
               <input type="submit" value="-----" class="form">
@@ -33,18 +32,32 @@
               <br>
               <br>
               <form action="./mail_transfer.php" method="post" class="login">
-                <!-- <label for="email">E-MAIL</label> -->
                 <input type="email" name="email" class="registration" placeholder="E-MAIL" required>
                 <br>
                 <br>
                 <input type="submit" value="-----" class="login">
                 <br>
                 <br>
-                <!-- <input type="checkbox" name="q2" value=""> -->
-                <!-- <label for="q2"><a href="./../../riyoukiyaku.html">利用規約</a>に同意する</label> -->
-                <!-- <p>※パスワードは半角英数字をそれぞれ１文字以上含んだ、<br>
-                  ８文字以上で設定してください。</p> -->
-                </form>
+              </form>
+            </details>
+            <br>
+            <br>
+            <hr>
+            <h1>メールアドレス登録解除</h1>
+            <details>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <form action="./mail_del.php" method="post" class="del_email">
+                <input type="email" name="del_email" class="delete_page" placeholder="E-MAIL" required>
+                <br>
+                <br>
+                <input type="submit" value="-----" class="delete_button">
+                <br>
+                <br>
+              </form>
             </details>
             <br>
             <br>
