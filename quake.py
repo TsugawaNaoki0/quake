@@ -83,10 +83,10 @@ mail_list = list(mail_list)
 
 # print("<p>" + str(mail_list) + "</p>")
 print("<p>" + "@@@ @@@ @@@ @@@" + "</p>")
-print("<p>" + str(mail_list) + "</p>")
-print("<p>" + mail_list[0] + "</p>")
-print("<p>" + mail_list[1] + "</p>")
-print("<p>" + mail_list[2] + "</p>")
+# print("<p>" + str(mail_list) + "</p>")
+# print("<p>" + mail_list[0] + "</p>")
+# print("<p>" + mail_list[1] + "</p>")
+# print("<p>" + mail_list[2] + "</p>")
 # print("<p>" + str(mail_list[0]) + "</p>")
 # print("<p>" + str(list(mail_list)[0]) + "</p>")
 # print("<p>" + str(list(mail_list)[1]) + "</p>")
@@ -175,16 +175,16 @@ else:
 
 
 
-    qqq = to_mail_class()
-    to_mail_list = qqq.to_mail()
-    print(to_mail_list)
+    # qqq = to_mail_class()
+    # to_mail_list = qqq.to_mail()
+    # print(to_mail_list)
 
 
 
 
 
-    # to_mail_address = to_mail_list[0]
-    to_mail_address = to_mail_list
+    # # to_mail_address = to_mail_list[0]
+    # to_mail_address = to_mail_list
 
 
 

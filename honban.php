@@ -6,6 +6,10 @@
    <title>HallowinGhost</title>
     <link rel="icon" href="./quake.png"><!-- タイトルにアイコンを設定 -->
     <link rel="apple-touch-icon" href="./quake.png"><!-- iphone のアイコンを設定 -->
+
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta http-equiv="refresh" content="5; URL='http://localhost/honban.php'">
+
  </head>
  <body>
     <div class="main">
@@ -22,7 +26,7 @@
         <br>
         <br>
         <div class="label">
-          地震が発生しました[これは本番です]
+          [本番環境]
         </div>
         <br>
         <br>
