@@ -11,6 +11,7 @@ import os
 from email.mime.text import MIMEText
 import smtplib
 import sys
+import pymysql
 
 
 
@@ -61,7 +62,7 @@ class y_news_class():
 
 
 
-
+"""
 args = sys.argv
 print("!!!!!!!!!!!")
 # print("<p>" + type(args) + "</p>")
@@ -69,28 +70,38 @@ print("!!!!!!!!!!!")
 print("@@@@@@@@@@@")
 # print("<p>" + args[1] + "</p>")
 mail_list = []
-
-
-
-
 for i in range(1, len(args)):
     mail_list.append(str(args[i]))
     # print(args[i])
 # print("<p>" + mail_list[i-1] + "@@@</p>")
-
-
 mail_list = list(mail_list)
+"""
 
-# print("<p>" + str(mail_list) + "</p>")
+
+connection = pymysql.connect(host='localhost', user='root', password='19960701mysql', db='mail_list')
+try:
+    with connection.cursor() as cursor:
+        # sql = "INSERT INTO sample_tbl (id, firstname, lastname) VALUES (1, 'mars', 'quai');"
+        sql = "select email from mailDeta;"
+        cursor.execute(sql)
+        aaa = cursor.fetchall()
+        connection.commit()
+finally:
+    connection.close()
+
+ccc = []
+bbb = ""
+print(aaa)
+print(type(aaa))
+for i in range(len(aaa)):
+    bbb = str(aaa[i])
+    bbb = bbb[2:]
+    bbb = bbb[:(len(bbb[i])-4)]
+    ccc.append(bbb)
+
+mail_list = ccc
+
 print("<p>" + "@@@ @@@ @@@ @@@" + "</p>")
-# print("<p>" + str(mail_list) + "</p>")
-# print("<p>" + mail_list[0] + "</p>")
-# print("<p>" + mail_list[1] + "</p>")
-# print("<p>" + mail_list[2] + "</p>")
-# print("<p>" + str(mail_list[0]) + "</p>")
-# print("<p>" + str(list(mail_list)[0]) + "</p>")
-# print("<p>" + str(list(mail_list)[1]) + "</p>")
-# print("<p>" + str(list(mail_list)[2]) + "</p>")
 
 
 url = "https://headline.5ch.net/bbynamazu/news.rss"
@@ -118,19 +129,12 @@ if (data_before == data_now):
 else:
     print("There are some changes")
 
-    # path = './data/quake_data.txt'
-    # path = './data/quake_data.txt'
     f = open(path, 'w')
     f.write(data_now)  # 何も書き込まなくてファイルは作成されました
     data_now = list(data_now)
 
-
     ccc = y_news_class()
     ddd = aaa.y_news(url)
-    # print(ddd)
-    # print(type(ddd))
-    # print(ddd[0])
-    # print(type(ddd[0]))
 
     message = ddd[0]
 
@@ -143,6 +147,8 @@ else:
         # print(res_list)
         res_date_before = res_list[0]
 
+        # res_date_before = "20221022080728 栃木県北部 M2.5 深さ10km 最大震度１"
+
         res_date = res_date_before[:4] + "年" + res_date_before[4:]
         res_date = res_date[:7] + "月" + res_date[7:]
         res_date = res_date[:10] + "日" + res_date[10:]
@@ -154,8 +160,6 @@ else:
         # res[10] = "年"
         # massage = res
         message = message.replace(res_date_before, res_date)
-
-
 
         # time = datetime.datetime.now()   # 日付を取得する
         # time = time.strftime('%Y年%m月%d日 %H:%M:%S')   # 見やすく変換する
@@ -176,21 +180,6 @@ else:
         image_dic = {'imageFile': binary}
 
         requests.post(api_url, headers=TOKEN_dic, data=send_dic)
-
-
-
-        # qqq = to_mail_class()
-        # to_mail_list = qqq.to_mail()
-        # print(to_mail_list)
-
-
-
-
-
-        # # to_mail_address = to_mail_list[0]
-        # to_mail_address = to_mail_list
-
-
 
         for i in range(len(mail_list)):
             quake_news = send_contents
