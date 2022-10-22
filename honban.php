@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="./quake.png"><!-- iphone のアイコンを設定 -->
 
     <!-- <meta name="viewport" content="width=device-width"> -->
-    <meta http-equiv="refresh" content="5; URL='http://localhost/honban.php'">
+    <!-- <meta http-equiv="refresh" content="5; URL='http://localhost/honban.php'"> -->
 
  </head>
  <body>
@@ -60,8 +60,9 @@
           $hikisu = $hikisu." ";
         }
 
-        $sentence = "export LANG=ja_JP.UTF-8; python3 quake.py ".$hikisu;
+        $sentence = "while true; do export LANG=ja_JP.UTF-8; python3 quake.py ".$hikisu."; sleep 5s; done";
         echo shell_exec($sentence);
+        echo $sentence;
 
        ?>
 
