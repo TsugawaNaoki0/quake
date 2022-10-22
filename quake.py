@@ -134,65 +134,72 @@ else:
 
     message = ddd[0]
 
-
-    res_list = re.findall(r'\d+', message)
-    # print(res_list)
-    res_date_before = res_list[0]
-
-    res_date = res_date_before[:4] + "年" + res_date_before[4:]
-    res_date = res_date[:7] + "月" + res_date[7:]
-    res_date = res_date[:10] + "日" + res_date[10:]
-    res_date = res_date[:13] + "時" + res_date[13:]
-    res_date = res_date[:16] + "分" + res_date[16:]
-    res_date = res_date[:19] + "秒" + res_date[19:]
-    # print(res_date)
-    # res[7] = "年"
-    # res[10] = "年"
-    # massage = res
-    message = message.replace(res_date_before, res_date)
+    if ((message[:10] == "[地震]【地震情報】") or (message[:10] == "[震＋]【地震情報】")):
+        print(message[4:])
+        # message = message[4:]
 
 
+        res_list = re.findall(r'\d+', message)
+        # print(res_list)
+        res_date_before = res_list[0]
 
-    # time = datetime.datetime.now()   # 日付を取得する
-    # time = time.strftime('%Y年%m月%d日 %H:%M:%S')   # 見やすく変換する
-
-    # 以下、LINEのメッセージ送信プログラム
-
-    TOKEN = 'ubh9DRuV9zdbxHuY7bRdyigA1nSVTaMj1O8E2oE9QJt'
-    api_url = 'https://notify-api.line.me/api/notify'
-    #時刻を送る内容の変数に設定
-    # send_contents = time
-    # send_contents = "プログラムが起動されました。"
-    send_contents = "地震が起きました : " + message + " "
-    TOKEN_dic = {'Authorization': 'Bearer' + ' ' + TOKEN}
-    send_dic = {'message': send_contents}
-
-    image_file = './test.png'
-    binary = open(image_file, mode='rb')
-    image_dic = {'imageFile': binary}
-
-    requests.post(api_url, headers=TOKEN_dic, data=send_dic)
+        res_date = res_date_before[:4] + "年" + res_date_before[4:]
+        res_date = res_date[:7] + "月" + res_date[7:]
+        res_date = res_date[:10] + "日" + res_date[10:]
+        res_date = res_date[:13] + "時" + res_date[13:]
+        res_date = res_date[:16] + "分" + res_date[16:]
+        res_date = res_date[:19] + "秒" + res_date[19:]
+        # print(res_date)
+        # res[7] = "年"
+        # res[10] = "年"
+        # massage = res
+        message = message.replace(res_date_before, res_date)
 
 
 
-    # qqq = to_mail_class()
-    # to_mail_list = qqq.to_mail()
-    # print(to_mail_list)
+        # time = datetime.datetime.now()   # 日付を取得する
+        # time = time.strftime('%Y年%m月%d日 %H:%M:%S')   # 見やすく変換する
+
+        # 以下、LINEのメッセージ送信プログラム
+
+        TOKEN = 'ubh9DRuV9zdbxHuY7bRdyigA1nSVTaMj1O8E2oE9QJt'
+        api_url = 'https://notify-api.line.me/api/notify'
+        #時刻を送る内容の変数に設定
+        # send_contents = time
+        # send_contents = "プログラムが起動されました。"
+        send_contents = "地震が起きました : " + message + " "
+        TOKEN_dic = {'Authorization': 'Bearer' + ' ' + TOKEN}
+        send_dic = {'message': send_contents}
+
+        image_file = './test.png'
+        binary = open(image_file, mode='rb')
+        image_dic = {'imageFile': binary}
+
+        requests.post(api_url, headers=TOKEN_dic, data=send_dic)
+
+
+
+        # qqq = to_mail_class()
+        # to_mail_list = qqq.to_mail()
+        # print(to_mail_list)
 
 
 
 
 
-    # # to_mail_address = to_mail_list[0]
-    # to_mail_address = to_mail_list
+        # # to_mail_address = to_mail_list[0]
+        # to_mail_address = to_mail_list
 
 
 
-    for i in range(len(mail_list)):
-        quake_news = send_contents
-        aaa= quake_mail_class()
-        # bbb = aaa.quake_mail(quake_news, to_mail_address[i])
-        bbb = aaa.quake_mail(quake_news, mail_list[i])
+        for i in range(len(mail_list)):
+            quake_news = send_contents
+            aaa= quake_mail_class()
+            # bbb = aaa.quake_mail(quake_news, to_mail_address[i])
+            bbb = aaa.quake_mail(quake_news, mail_list[i])
+
+    else:
+        print(message[4:])
 
 
 f.close()
