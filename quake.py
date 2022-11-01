@@ -138,7 +138,7 @@ else:
 
     message = ddd[0]
 
-    if ((message[:10] == "[地震]【地震情報】") or (message[:10] == "[震＋]【地震情報】")):
+    if ((message[:10] == "[地震]【地震情報】") or (message[:11] == "[震＋] 【地震情報】")):
         print(message[4:])
         # message = message[4:]
 
@@ -188,7 +188,7 @@ else:
             bbb = aaa.quake_mail(quake_news, mail_list[i])
 
     else:
-        print(message[4:])
+        print(message[4:] + "@@@ @@@ @@@")
 
 
 f.close()
