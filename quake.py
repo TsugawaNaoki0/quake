@@ -181,11 +181,10 @@ else:
 
         requests.post(api_url, headers=TOKEN_dic, data=send_dic)
 
-        for i in range(len(mail_list)):
-            quake_news = send_contents
-            aaa= quake_mail_class()
-            # bbb = aaa.quake_mail(quake_news, to_mail_address[i])
-            bbb = aaa.quake_mail(quake_news, mail_list[i])
+        # for i in range(len(mail_list)):
+        #     quake_news = send_contents
+        #     aaa= quake_mail_class()
+        #     bbb = aaa.quake_mail(quake_news, mail_list[i])
 
     else:
         print(message[4:] + "@@@ @@@ @@@")
